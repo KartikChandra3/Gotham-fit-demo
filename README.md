@@ -30,4 +30,4 @@ You can also deploy this on:
 Kartik Chandra — [@KartikChandra3](https://github.com/KartikChandra3)
 
 ## 🪪 License
-[MIT](LICENSE)
+[MIT](LICENSE.md)
