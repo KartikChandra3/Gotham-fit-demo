@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotham Fit | Train Like The Dark Knight</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bat-bg"></div>
+    
+    <!-- Main App Container -->
+    <div class="app-container">
+        <!-- Header with Bat Logo -->
+        <header class="app-header">
+            <img src="assets/bat-logo.svg" alt="Gotham Fit Logo" class="bat-logo">
+            <h1>GOTHAM <span>FIT</span></h1>
+            <div class="profile-icon">
+                <div class="bat-ears"></div>
+            </div>
+        </header>
+
+        <!-- Bulk/Cut Mode Toggle -->
+        <div class="mode-toggle">
+            <button class="bulk-mode active" data-mode="bulk">
+                <span>BULK</span>
+                <div class="bat-indicator"></div>
+            </button>
+            <button class="cut-mode" data-mode="cut">
+                <span>CUT</span>
+                <div class="bat-indicator"></div>
+            </button>
+        </div>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Daily Stats -->
+            <section class="stats-panel">
+                <div class="stat-card calories">
+                    <h3>CALORIES</h3>
+                    <div class="bat-ring" data-value="75">
+                        <span>2,450</span>/3,200
+                    </div>
+                </div>
+                
+                <div class="stat-card protein">
+                    <h3>PROTEIN</h3>
+                    <div class="bat-ring" data-value="85">
+                        <span>185</span>/220g
+                    </div>
+                </div>
+                
+                <div class="stat-card workout">
+                    <h3>WORKOUT</h3>
+                    <div class="bat-ring" data-value="60">
+                        <span>45</span>/75 min
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Log Buttons (Now with Phosphor Icons) -->
+            <section class="quick-actions">
+                <button class="bat-button meal-log">
+                    <i class="ph ph-hamburger"></i>
+                    <span>LOG MEAL</span>
+                </button>
+                <button class="bat-button workout-log">
+                    <i class="ph ph-barbell"></i>
+                    <span>LOG WORKOUT</span>
+                </button>
+                <button class="bat-button water-log">
+                    <i class="ph ph-drop"></i>
+                    <span>LOG WATER</span>
+                </button>
+            </section>
+
+            <!-- Progress Chart -->
+            <section class="progress-section">
+                <h2>GOTHAM PROGRESS</h2>
+                <div class="chart-container">
+                    <canvas id="progress-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Villain Log (Recent Activities) -->
+            <section class="activity-log">
+                <h2>VILLAIN LOG</h2>
+                <div class="log-items">
+                    <div class="log-item">
+                        <div class="log-icon chest"></div>
+                        <div class="log-details">
+                            <h3>Chest & Tri's</h3>
+                            <p>Completed 12/12 exercises</p>
+                            <span class="log-time">2 hours ago</span>
+                        </div>
+                        <div class="log-calories">+720 kcal</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-icon meal"></div>
+                        <div class="log-details">
+                            <h3>Post-Workout Meal</h3>
+                            <p>62g protein | 850 kcal</p>
+                            <span class="log-time">1 hour ago</span>
+                        </div>
+                        <div class="log-calories">-850 kcal</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation (Utility Belt with Phosphor Icons) -->
+        <nav class="utility-belt">
+            <button class="belt-item active">
+                <i class="ph ph-house"></i>
+            </button>
+            <button class="belt-item">
+                <i class="ph ph-clipboard-text"></i>
+            </button>
+            <button class="belt-item">
+                <i class="ph ph-barbell"></i>
+            </button>
+            <button class="belt-item">
+                <i class="ph ph-chart-line-up"></i>
+            </button>
+            <button class="belt-item">
+                <i class="ph ph-gear"></i>
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/chart.js"></script>
+</body>
+</html>
