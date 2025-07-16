@@ -1,0 +1,456 @@
+/* === Root Variables === */
+:root {
+  --bat-primary: #0f0f0f;
+  --bat-secondary: #1a1a1a;
+  --bat-accent: #f0c808;
+  --bat-accent-cut: #00a8e8;
+  --bat-text: #e8e8e8;
+  --bat-text-secondary: #a8a8a8;
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+}
+
+body {
+  background-color: var(--bat-primary);
+  color: var(--bat-text);
+  overflow-x: hidden;
+}
+
+/* === Background === */
+.bat-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/bat-bg.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: -1;
+  animation: batSignal 8s infinite;
+}
+
+/* === App Container === */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--bat-primary);
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+/* === Header === */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--bat-secondary);
+  border-bottom: 2px solid var(--bat-accent);
+}
+
+.bat-logo {
+  height: 40px;
+  filter: invert(81%) sepia(59%) saturate(638%) hue-rotate(358deg) brightness(102%) contrast(97%);
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.app-header h1 span {
+  color: var(--bat-accent);
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bat-text);
+  border-radius: 50%;
+  position: relative;
+}
+
+.bat-ears {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 12px solid var(--bat-secondary);
+}
+
+/* === Mode Toggle === */
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.mode-toggle button {
+  background: none;
+  border: none;
+  color: var(--bat-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle button.active {
+  color: var(--bat-accent);
+}
+
+.mode-toggle button.active .bat-indicator {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.bat-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--bat-accent);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+
+.cut-mode .bat-indicator {
+  background-color: var(--bat-accent-cut);
+}
+
+/* === Dashboard === */
+.dashboard {
+  padding: 0 1.5rem 6rem;
+}
+
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--bat-secondary);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+  font-size: 0.9rem;
+  color: var(--bat-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.bat-ring {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: batRingRotate 1.5s ease-out forwards;
+}
+
+.bat-ring::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #333;
+}
+
+.bat-ring::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid var(--bat-accent);
+  clip: rect(0, 50px, 100px, 0);
+}
+
+.bat-ring span {
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.protein .bat-ring::after {
+  border-color: #f0c808;
+}
+
+.workout .bat-ring::after {
+  border-color: #e84a4a;
+}
+
+/* === Quick Actions with Phosphor Icons === */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bat-button {
+  background-color: var(--bat-secondary);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bat-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.bat-button .ph {
+  font-size: 24px;
+  color: var(--bat-accent);
+  margin-bottom: 8px;
+}
+
+.bat-button span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* === Progress Section === */
+.progress-section {
+  background-color: var(--bat-secondary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.progress-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--bat-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 200px;
+}
+
+/* === Activity Log === */
+.activity-log h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--bat-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.log-items {
+  background-color: var(--bat-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.log-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  animation: logEntry 0.3s ease-out forwards;
+}
+
+.log-item:nth-child(1) { animation-delay: 0.1s; }
+.log-item:nth-child(2) { animation-delay: 0.2s; }
+
+.log-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(240, 200, 8, 0.1);
+}
+
+.chest {
+  background-color: rgba(232, 74, 74, 0.1);
+}
+
+.meal {
+  background-color: rgba(0, 168, 232, 0.1);
+}
+
+.log-details {
+  flex: 1;
+}
+
+.log-details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.log-details p,
+.log-time {
+  font-size: 0.8rem;
+  color: var(--bat-text-secondary);
+}
+
+.log-time {
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
+}
+
+.log-calories {
+  font-weight: 600;
+  color: var(--bat-accent);
+}
+
+/* === Utility Belt with Phosphor === */
+.utility-belt {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--bat-secondary);
+  padding: 0.8rem 0;
+  border-top: 2px solid var(--bat-accent);
+  z-index: 10;
+}
+
+.belt-item {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.belt-item .ph {
+  font-size: 22px;
+  color: var(--bat-text);
+  transition: all 0.3s ease;
+}
+
+.belt-item.active .ph {
+  color: var(--bat-accent);
+  transform: scale(1.1);
+}
+
+.belt-item::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--bat-accent);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.belt-item.active::after {
+  opacity: 1;
+}
+
+/* === Animations === */
+@keyframes batRingRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes batPulse {
+  0% { box-shadow: 0 0 0 0 rgba(240, 200, 8, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(240, 200, 8, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(240, 200, 8, 0); }
+}
+
+.bat-button:active {
+  animation: batPulse 0.5s;
+}
+
+@keyframes logEntry {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes batSignal {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.1; }
+}
+
+@keyframes beltHover {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.belt-item:hover {
+  animation: beltHover 0.5s ease;
+}
+
+/* === Responsive === */
+@media (max-width: 400px) {
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+  .bat-ring {
+    width: 70px;
+    height: 70px;
+  }
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+  .bat-button {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.8rem 1rem;
+  }
+  .bat-button .ph {
+    margin-right: 0.8rem;
+    margin-bottom: 0;
+  }
+}
