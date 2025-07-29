@@ -1,33 +1,56 @@
-# Gotham Fit 🦇
+# Gotham Fit 🦇  
+Train in the shadows. Rise like the Knight.
 
-*Train like the Dark Knight.*  
-A stylish gym companion app UI built with HTML, CSS, and JavaScript.  
-🛠 Note: This is a frontend-only project for now.
+A minimal, dark-themed gym companion UI inspired by the grit and discipline of Gotham.  
+Built with pure HTML, CSS, and JavaScript. No fluff — just raw design and potential.
 
-## 🔥 Features
-- Bulk/Cut mode toggle
-- Calorie, protein, and workout tracking rings
-- Progress chart with muscle and weight stats
-- "Villain Log" for workout and meal history
-- Animated UI with utility belt navigation
+🛠 Note: This is a *frontend-only prototype*. Full functionality coming soon.
 
-## 🧩 Tech Stack
-- HTML5 + CSS3
-- JavaScript (vanilla)
-- Phosphor Icons
+🔗 *Live Demo*  
+[https://noctenknight.github.io/Gotham-fit-demo/](https://noctenknight.github.io/Gotham-fit-demo/)
+
+---
+
+## 🕶 Features (So Far)
+- Toggle between *Bulk* / *Cut* mode  
+- Rings for calories, protein, and workout progress  
+- Line graph showing muscle mass and weight tracking  
+- "Villain Log" to review past meals and sessions  
+- Animated, utility-belt-inspired navigation
+
+---
+
+## 🧠 Tech Stack
+- HTML5 + CSS3  
+- Vanilla JavaScript  
+- [Phosphor Icons](https://phosphoricons.com)  
 - Chart.js
 
-## 💡 How to Use
-Just open index.html in a browser.  
-No frameworks or backend needed — it’s all static and lightweight.
+---
 
-You can also deploy this on:
-- GitHub Pages
-- Netlify
+## ⚙ How to Use
+- Clone or download this repo  
+- Open index.html in any modern browser  
+- No build tools, no frameworks — just clean static code
+
+You can also deploy it on:
+- GitHub Pages  
+- Netlify  
 - Vercel
 
-## 👤 Author
-Kartik Chandra — [@KartikChandra3](https://github.com/KartikChandra3)
+---
 
-## 🪪 License
+## 🚧 What's Next?
+This project is in *active development*.  
+A full-featured app experience is coming soon — including real-time data sync, account support, and dynamic updates.  
+Stay tuned.
+
+---
+
+## 🦇 Author  
+*Nocten* — [@NoctenKnight](https://github.com/NoctenKnight)
+
+---
+
+## 🪪 License  
 [MIT](LICENSE.md)
